@@ -1,0 +1,72 @@
+import { Routes } from '@angular/router';
+import { RegionListComponent } from './pages/region-list/region-list.component';
+import { RegionDetailComponent } from './pages/region-detail/region-detail.component';
+import { HomeComponent } from './pages/home/home.component';
+import { WeaponsListComponent } from './pages/weapons/weapons-list.component';
+import { WeaponDetailComponent } from './pages/weapons/weapon-detail.component';
+import { BossesListComponent } from './pages/bosses/bosses-list.component';
+import { BossDetailComponent } from './pages/bosses/boss-detail.component';
+import { ArmorsListComponent } from './pages/armors/armors-list.component';
+import { ArmorDetailComponent } from './pages/armors/armor-detail.component';
+import { SorceriesListComponent } from './pages/sorceries/sorceries-list.component';
+import { SorceryDetailComponent } from './pages/sorceries/sorcery-detail.component';
+import { ItemsListComponent } from './pages/items/items-list.component';
+import { AmmosListComponent } from './pages/ammos/ammos-list.component';
+import { AshesListComponent } from './pages/ashes/ashes-list.component';
+import { ClassesListComponent } from './pages/classes/classes-list.component';
+import { CreaturesListComponent } from './pages/creatures/creatures-list.component';
+import { IncantationsListComponent } from './pages/incantations/incantations-list.component';
+import { LocationsListComponent } from './pages/locations/locations-list.component';
+import { NpcsListComponent } from './pages/npcs/npcs-list.component';
+import { ShieldsListComponent } from './pages/shields/shields-list.component';
+import { SpiritsListComponent } from './pages/spirits/spirits-list.component';
+import { TalismansListComponent } from './pages/talismans/talismans-list.component';
+import { TalismanDetailComponent } from './pages/talismans/talismans-detail.component';
+import { SpiritDetailComponent } from './pages/spirits/spirits-detail.component';
+import { ShieldDetailComponent } from './pages/shields/shields-detail.component';
+import { NpcDetailComponent } from './pages/npcs/npcs-detail.component';
+import { LocationDetailComponent } from './pages/locations/locations-detail.component';
+import { IncantationDetailComponent } from './pages/incantations/incantations-detail.component';
+import { CreatureDetailComponent } from './pages/creatures/creatures-detail.component';
+import { ClassDetailComponent } from './pages/classes/classes-detail.component';
+import { AmmoDetailComponent } from './pages/ammos/ammos-detail.component';
+import { AshDetailComponent } from './pages/ashes/ashes-detail.component';
+import { ItemDetailComponent } from './pages/items/items-detail.component';
+import { SearchResultsComponent } from './pages/search-results/search-results.component';
+
+export const routes: Routes = [
+  { path: 'regions', component: RegionListComponent },
+  { path: 'regions/:name', component: RegionDetailComponent },
+  { path: 'weapons', component: WeaponsListComponent },
+  { path: 'weapons/:id', component: WeaponDetailComponent },
+  { path: 'bosses', component: BossesListComponent },
+  { path: 'bosses/:id', component: BossDetailComponent },
+  { path: 'armors', component: ArmorsListComponent },
+  { path: 'armors/:id', component: ArmorDetailComponent },
+  { path: 'sorceries', component: SorceriesListComponent },
+  { path: 'sorceries/:id', component: SorceryDetailComponent },
+  { path: 'items', component: ItemsListComponent },
+  { path: 'items/:id', component: ItemDetailComponent },
+  { path: 'ammos', component: AmmosListComponent },
+  { path: 'ammos/:id', component: AmmoDetailComponent },
+  { path: 'ashes', component: AshesListComponent },
+  { path: 'ashes/:id', component: AshDetailComponent },
+  { path: 'classes', component: ClassesListComponent },
+  { path: 'classes/:id', component: ClassDetailComponent },
+  { path: 'creatures', component: CreaturesListComponent },
+  { path: 'creatures/:id', component: CreatureDetailComponent },
+  { path: 'incantations', component: IncantationsListComponent },
+  { path: 'incantations/:id', component: IncantationDetailComponent },
+  { path: 'locations', component: LocationsListComponent },
+  { path: 'locations/:id', component: LocationDetailComponent },
+  { path: 'npcs', component: NpcsListComponent },
+  { path: 'npcs/:id', component: NpcDetailComponent },
+  { path: 'shields', component: ShieldsListComponent },
+  { path: 'shields/:id', component: ShieldDetailComponent },
+  { path: 'spirits', component: SpiritsListComponent },
+  { path: 'spirits/:id', component: SpiritDetailComponent },
+  { path: 'talismans', component: TalismansListComponent },
+  { path: 'talismans/:id', component: TalismanDetailComponent },
+  { path: 'search', component: SearchResultsComponent },
+  { path: '', pathMatch: 'full', component: HomeComponent },
+];

@@ -1,0 +1,675 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Elden Ring API Documentation",
+        "description": "Documentación de la API para la guia de Elden Ring",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/ammos": {
+            "get": {
+                "tags": [
+                    "municiones"
+                ],
+                "summary": "Obtiene la lista de municiones",
+                "operationId": "e8384624c10ef7a7791c9dc9107da328",
+                "responses": {
+                    "200": {
+                        "description": "Muestra la lista de municiones"
+                    }
+                }
+            }
+        },
+        "/api/ammos/{id}": {
+            "get": {
+                "tags": [
+                    "municiones"
+                ],
+                "summary": "Obtiene una munición por ID",
+                "operationId": "b8f81d5e5f847e52ebd3b5baf1f92b50",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de la munición",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Muestra una munición por ID"
+                    },
+                    "404": {
+                        "description": "Munición no encontrada"
+                    }
+                }
+            }
+        },
+        "/api/armors": {
+            "get": {
+                "tags": [
+                    "armaduras"
+                ],
+                "summary": "Obtiene la lista de armaduras",
+                "operationId": "3f5ef3b0751e4890b1fd9941cf28ce5f",
+                "responses": {
+                    "200": {
+                        "description": "Muestra la lista de armaduras"
+                    }
+                }
+            }
+        },
+        "/api/armors/{id}": {
+            "get": {
+                "tags": [
+                    "armaduras"
+                ],
+                "summary": "Obtiene una armadura por ID",
+                "operationId": "bb374e0f5f5ce048f127012c0b373f05",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de la armadura",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Muestra una armadura por ID"
+                    },
+                    "404": {
+                        "description": "Armadura no encontrada"
+                    }
+                }
+            }
+        },
+        "/api/ashes": {
+            "get": {
+                "tags": [
+                    "cenizas"
+                ],
+                "summary": "Obtiene la lista de cenizas",
+                "operationId": "6eee2d58ceb560b2608156acf48b340b",
+                "responses": {
+                    "200": {
+                        "description": "Muestra la lista de cenizas"
+                    }
+                }
+            }
+        },
+        "/api/ashes/{id}": {
+            "get": {
+                "tags": [
+                    "cenizas"
+                ],
+                "summary": "Obtiene una ceniza por ID",
+                "operationId": "ddaa54870303039438ac097e4d11e9b0",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de la ceniza",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Muestra una ceniza por ID"
+                    },
+                    "404": {
+                        "description": "Ceniza no encontrada"
+                    }
+                }
+            }
+        },
+        "/api/bosses": {
+            "get": {
+                "tags": [
+                    "jefes"
+                ],
+                "summary": "Obtiene la lista de jefes",
+                "operationId": "8bf6fb5c606939994f5a563904e11705",
+                "responses": {
+                    "200": {
+                        "description": "Muestra la lista de jefes"
+                    }
+                }
+            }
+        },
+        "/api/bosses/{id}": {
+            "get": {
+                "tags": [
+                    "jefes"
+                ],
+                "summary": "Obtiene un jefe por ID",
+                "operationId": "5ef833fa985c1138152baa3c402ed311",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del jefe",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Muestra un jefe por ID"
+                    },
+                    "404": {
+                        "description": "Jefe no encontrado"
+                    }
+                }
+            }
+        },
+        "/api/classes": {
+            "get": {
+                "tags": [
+                    "clases"
+                ],
+                "summary": "Obtiene la lista de clases",
+                "operationId": "aa243e0e3b22d2c833d7ad3025edbb1c",
+                "responses": {
+                    "200": {
+                        "description": "Muestra la lista de clases"
+                    }
+                }
+            }
+        },
+        "/api/classes/{id}": {
+            "get": {
+                "tags": [
+                    "clases"
+                ],
+                "summary": "Obtiene una clase por ID",
+                "operationId": "506b6d726f2f07ed076060377a505925",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de la clase",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Muestra una clase por ID"
+                    },
+                    "404": {
+                        "description": "Clase no encontrada"
+                    }
+                }
+            }
+        },
+        "/api/creatures": {
+            "get": {
+                "tags": [
+                    "criaturas"
+                ],
+                "summary": "Obtiene la lista de criaturas",
+                "operationId": "982b940d8fec121b169ae48b525c682d",
+                "responses": {
+                    "200": {
+                        "description": "Muestra la lista de criaturas"
+                    }
+                }
+            }
+        },
+        "/api/creatures/{id}": {
+            "get": {
+                "tags": [
+                    "criaturas"
+                ],
+                "summary": "Obtiene una criatura por ID",
+                "operationId": "02b9dc56139a825ff8925941293cd227",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de la criatura",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Muestra una criatura por ID"
+                    },
+                    "404": {
+                        "description": "Criatura no encontrada"
+                    }
+                }
+            }
+        },
+        "/api/incantations": {
+            "get": {
+                "tags": [
+                    "encantamientos"
+                ],
+                "summary": "Obtiene la lista de encantamientos",
+                "operationId": "5957c76c6b32e52e37b83e5ba6288b5a",
+                "responses": {
+                    "200": {
+                        "description": "Muestra la lista de encantamientos"
+                    }
+                }
+            }
+        },
+        "/api/incantations/{id}": {
+            "get": {
+                "tags": [
+                    "encantamientos"
+                ],
+                "summary": "Obtiene un encantamiento por ID",
+                "operationId": "9f612492b04de66b0f252ef9cae851b1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del encantamiento",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Muestra un encantamiento por ID"
+                    },
+                    "404": {
+                        "description": "Encantamiento no encontrado"
+                    }
+                }
+            }
+        },
+        "/api/items": {
+            "get": {
+                "tags": [
+                    "ítems"
+                ],
+                "summary": "Obtiene la lista de ítems",
+                "operationId": "53e44209d7fe56acf154d9c0d47e5069",
+                "responses": {
+                    "200": {
+                        "description": "Muestra la lista de ítems"
+                    }
+                }
+            }
+        },
+        "/api/items/{id}": {
+            "get": {
+                "tags": [
+                    "ítems"
+                ],
+                "summary": "Obtiene un ítem por ID",
+                "operationId": "cf72b0674e86263c9f13097ae1198063",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del ítem",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Muestra un ítem por ID"
+                    },
+                    "404": {
+                        "description": "Ítem no encontrado"
+                    }
+                }
+            }
+        },
+        "/api/locations": {
+            "get": {
+                "tags": [
+                    "ubicaciones"
+                ],
+                "summary": "Obtiene la lista de ubicaciones",
+                "operationId": "4a95f25c1e13530115fd3fd6961b92de",
+                "responses": {
+                    "200": {
+                        "description": "Muestra la lista de ubicaciones"
+                    }
+                }
+            }
+        },
+        "/api/locations/{id}": {
+            "get": {
+                "tags": [
+                    "ubicaciones"
+                ],
+                "summary": "Obtiene una ubicación por ID",
+                "operationId": "5ac0324577506ee36225fdb6a881506c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID de la ubicación",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Muestra una ubicación por ID"
+                    },
+                    "404": {
+                        "description": "Ubicación no encontrada"
+                    }
+                }
+            }
+        },
+        "/api/npcs": {
+            "get": {
+                "tags": [
+                    "npcs"
+                ],
+                "summary": "Obtiene la lista de NPCs",
+                "operationId": "f5bd30d96d09cce7229d3f90dad6b5f2",
+                "responses": {
+                    "200": {
+                        "description": "Muestra la lista de NPCs"
+                    }
+                }
+            }
+        },
+        "/api/npcs/{id}": {
+            "get": {
+                "tags": [
+                    "npcs"
+                ],
+                "summary": "Obtiene un NPC por ID",
+                "operationId": "a064ae12c0775e254e489c401fbb92f3",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del NPC",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Muestra un NPC por ID"
+                    },
+                    "404": {
+                        "description": "NPC no encontrado"
+                    }
+                }
+            }
+        },
+        "/api/shields": {
+            "get": {
+                "tags": [
+                    "escudos"
+                ],
+                "summary": "Obtiene la lista de escudos",
+                "operationId": "247337e2bfe2bd2ebde4b01b93cbe72d",
+                "responses": {
+                    "200": {
+                        "description": "Muestra la lista de escudos"
+                    }
+                }
+            }
+        },
+        "/api/shields/{id}": {
+            "get": {
+                "tags": [
+                    "escudos"
+                ],
+                "summary": "Obtiene un escudo por ID",
+                "operationId": "7d98a38552b0c8e4ccc4f28e5697cc25",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del escudo",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Muestra un escudo por ID"
+                    },
+                    "404": {
+                        "description": "Escudo no encontrado"
+                    }
+                }
+            }
+        },
+        "/api/sorceries": {
+            "get": {
+                "tags": [
+                    "hechizos"
+                ],
+                "summary": "Obtiene la lista de hechizos",
+                "operationId": "ba90b74af6ae7e4fe40d1dfcd6d00c50",
+                "responses": {
+                    "200": {
+                        "description": "Muestra la lista de hechizos"
+                    }
+                }
+            }
+        },
+        "/api/sorceries/{id}": {
+            "get": {
+                "tags": [
+                    "hechizos"
+                ],
+                "summary": "Obtiene un hechizo por ID",
+                "operationId": "8440baea7947ded4c8601c12fe65fe6a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del hechizo",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Muestra un hechizo por ID"
+                    },
+                    "404": {
+                        "description": "Hechizo no encontrado"
+                    }
+                }
+            }
+        },
+        "/api/spirits": {
+            "get": {
+                "tags": [
+                    "espíritus"
+                ],
+                "summary": "Obtiene la lista de espíritus",
+                "operationId": "f0708a06b038c58ce02172fbf1618016",
+                "responses": {
+                    "200": {
+                        "description": "Muestra la lista de espíritus"
+                    }
+                }
+            }
+        },
+        "/api/spirits/{id}": {
+            "get": {
+                "tags": [
+                    "espíritus"
+                ],
+                "summary": "Obtiene un espíritu por ID",
+                "operationId": "b3ba3ea624f6f1518419cf87e2a75fc6",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del espíritu",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Muestra un espíritu por ID"
+                    },
+                    "404": {
+                        "description": "Espíritu no encontrado"
+                    }
+                }
+            }
+        },
+        "/api/talismans": {
+            "get": {
+                "tags": [
+                    "talismanes"
+                ],
+                "summary": "Obtiene la lista de talismanes",
+                "operationId": "fc1f36db2a29412d51d2f9ad014e3795",
+                "responses": {
+                    "200": {
+                        "description": "Muestra la lista de talismanes"
+                    }
+                }
+            }
+        },
+        "/api/talismans/{id}": {
+            "get": {
+                "tags": [
+                    "talismanes"
+                ],
+                "summary": "Obtiene un talismán por ID",
+                "operationId": "8133cac5720f090c6edbb42c27c2600b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del talismán",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Muestra un talismán por ID"
+                    },
+                    "404": {
+                        "description": "Talismán no encontrado"
+                    }
+                }
+            }
+        },
+        "/api/weapons": {
+            "get": {
+                "tags": [
+                    "armas"
+                ],
+                "summary": "Obtiene la lista de armas",
+                "operationId": "4f0c8c65d0ade793a848e6212bbfedc4",
+                "responses": {
+                    "200": {
+                        "description": "Muestra la lista de armas"
+                    }
+                }
+            }
+        },
+        "/api/weapons/{id}": {
+            "get": {
+                "tags": [
+                    "armas"
+                ],
+                "summary": "Obtiene un arma por ID",
+                "operationId": "b84fc0911e564d6c896da95b14f371a1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del arma",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Muestra un arma por ID"
+                    },
+                    "404": {
+                        "description": "Arma no encontrada"
+                    }
+                }
+            }
+        },
+        "/api/ping": {
+            "get": {
+                "tags": [
+                    "Health Check"
+                ],
+                "description": "A sample endpoint to test the API and ensure documentation generation works.",
+                "operationId": "30dd9cf96775eba8d3a5118c5b5b9ee5",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "municiones",
+            "description": "municiones"
+        },
+        {
+            "name": "armaduras",
+            "description": "armaduras"
+        },
+        {
+            "name": "cenizas",
+            "description": "cenizas"
+        },
+        {
+            "name": "jefes",
+            "description": "jefes"
+        },
+        {
+            "name": "clases",
+            "description": "clases"
+        },
+        {
+            "name": "criaturas",
+            "description": "criaturas"
+        },
+        {
+            "name": "encantamientos",
+            "description": "encantamientos"
+        },
+        {
+            "name": "ítems",
+            "description": "ítems"
+        },
+        {
+            "name": "ubicaciones",
+            "description": "ubicaciones"
+        },
+        {
+            "name": "npcs",
+            "description": "npcs"
+        },
+        {
+            "name": "escudos",
+            "description": "escudos"
+        },
+        {
+            "name": "hechizos",
+            "description": "hechizos"
+        },
+        {
+            "name": "espíritus",
+            "description": "espíritus"
+        },
+        {
+            "name": "talismanes",
+            "description": "talismanes"
+        },
+        {
+            "name": "armas",
+            "description": "armas"
+        },
+        {
+            "name": "Health Check",
+            "description": "Health Check"
+        }
+    ]
+}
