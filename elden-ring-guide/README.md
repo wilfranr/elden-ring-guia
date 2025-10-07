@@ -1,61 +1,118 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Elden Ring Guide API
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Esta es la API de backend para la aplicación Elden Ring Guide. Proporciona todos los datos relacionados con el juego, como jefes, objetos, armas y más. Está construida con Laravel y utiliza Meilisearch para una funcionalidad de búsqueda rápida.
 
-## About Laravel
+## Características
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- API RESTful para gestionar los datos de Elden Ring.
+- Documentación de API generada con Swagger (OpenAPI).
+- Búsqueda potente implementada con Laravel Scout y Meilisearch.
+- Endpoints para una amplia variedad de entidades del juego, incluyendo:
+  - Jefes, Objetos, Municiones, Armaduras, Cenizas de Guerra, Clases, Criaturas, Hechizos, Encantamientos, NPCs, Escudos, Espíritus, Talismanes y Armas.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requisitos Previos
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- PHP >= 8.2
+- Composer
+- Un servidor de base de datos compatible con Laravel (ej. MySQL, PostgreSQL, SQLite).
+- Una instancia de [Meilisearch](https://www.meilisearch.com/) en ejecución.
 
-## Learning Laravel
+## Guía de Instalación
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1.  **Clonar el repositorio (si aún no lo has hecho):**
+    ```bash
+    git clone <URL_DEL_REPOSITORIO>
+    cd elden-ring-guide
+    ```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+2.  **Instalar dependencias de PHP:**
+    ```bash
+    composer install
+    ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3.  **Configurar el entorno:**
+    Copia el archivo de entorno de ejemplo y genera la clave de la aplicación.
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
 
-## Laravel Sponsors
+4.  **Configurar el archivo `.env`:**
+    Abre el archivo `.env` y configura las credenciales de tu base de datos (`DB_*`) y las claves de Meilisearch (`MEILISEARCH_*`).
+    ```ini
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=elden_ring
+    DB_USERNAME=root
+    DB_PASSWORD=
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    SCOUT_DRIVER=meilisearch
+    MEILISEARCH_HOST=http://127.0.0.1:7700
+    MEILISEARCH_KEY=tu_clave_maestra_de_meilisearch
+    ```
 
-### Premium Partners
+5.  **Ejecutar las migraciones de la base de datos:**
+    Esto creará todas las tablas necesarias en tu base de datos.
+    ```bash
+    php artisan migrate
+    ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+6.  **(Opcional) Poblar la base de datos:**
+    Si hay seeders disponibles, puedes poblar la base de datos con datos iniciales.
+    ```bash
+    php artisan db:seed
+    ```
 
-## Contributing
+7.  **(Opcional) Importar datos a Meilisearch:**
+    Para que la búsqueda funcione, necesitas importar los modelos al índice de Meilisearch.
+    ```bash
+    php artisan scout:import "App\Models\SearchableItem"
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Uso
 
-## Code of Conduct
+### Iniciar el Servidor de Desarrollo
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Para iniciar el servidor de desarrollo local de Laravel, ejecuta:
+```bash
+php artisan serve
+```
+La API estará disponible en `http://127.0.0.1:8000`.
 
-## Security Vulnerabilities
+### Documentación de la API
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+La documentación de la API, generada con Swagger, está disponible en la siguiente ruta una vez que el servidor está en marcha:
+```
+/api/documentation
+```
+Por ejemplo: `http://127.0.0.1:8000/api/documentation`
 
-## License
+### Ejecutar Pruebas
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Para ejecutar el conjunto de pruebas de PHPUnit, utiliza el siguiente comando:
+```bash
+php artisan test
+```
+
+## Endpoints de la API
+
+La API proporciona endpoints de solo lectura (`index`, `show`) para los siguientes recursos:
+
+- `/api/bosses`
+- `/api/items`
+- `/api/ammos`
+- `/api/armors`
+- `/api/ashes`
+- `/api/classes`
+- `/api/creatures`
+- `/api/incantations`
+- `/api/locations`
+- `/api/npcs`
+- `/api/shields`
+- `/api/sorceries`
+- `/api/spirits`
+- `/api/talismans`
+- `/api/weapons`
+- `/api/regions/{region}`
+- `/api/search?q={termino_de_busqueda}`

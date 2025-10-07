@@ -1,27 +1,62 @@
-# EldenRingFrontend
+# Elden Ring Guide Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+Este es el proyecto de frontend para la aplicación Elden Ring Guide. Es una aplicación de una sola página (SPA) construida con Angular, diseñada para interactuar con la [API de backend de Elden Ring Guide](../elden-ring-guide/).
 
-## Development server
+## Requisitos Previos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Node.js](https://nodejs.org/) (se recomienda la versión LTS)
+- [Angular CLI](https://angular.io/cli) (puedes instalarla globalmente con `npm install -g @angular/cli`)
+- El [servidor de la API de backend](https://github.com/Yosepht25/Elden-Ring-Guia/tree/main/elden-ring-guide) debe estar en ejecución para que la aplicación funcione correctamente.
 
-## Code scaffolding
+## Guía de Instalación
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1.  **Navegar al directorio del frontend:**
+    ```bash
+    cd elden-ring-frontend
+    ```
 
-## Build
+2.  **Instalar dependencias de Node.js:**
+    ```bash
+    npm install
+    ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Uso
 
-## Running unit tests
+### Iniciar el Servidor de Desarrollo
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para iniciar el servidor de desarrollo de Angular, ejecuta el siguiente comando. Esto compilará la aplicación y la servirá en `http://localhost:4200/`.
 
-## Running end-to-end tests
+```bash
+npm start
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+La aplicación se recargará automáticamente si cambias alguno de los archivos fuente.
 
-## Further help
+### Generar Componentes, Directivas, Pipes y Servicios
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Para generar nuevos componentes o cualquier otro artefacto de Angular, puedes usar Angular CLI:
+
+```bash
+ng generate component nombre-del-componente
+ng generate service nombre-del-servicio
+```
+
+### Construir la Aplicación para Producción
+
+Para construir la aplicación para un entorno de producción, utiliza el siguiente comando:
+
+```bash
+npm run build
+```
+
+Los artefactos de la compilación se almacenarán en el directorio `dist/`. Esta compilación incluye optimizaciones como la minificación de código y la eliminación de código no utilizado (`tree-shaking`) para un rendimiento óptimo.
+
+### Ejecutar Pruebas Unitarias
+
+Para ejecutar las pruebas unitarias a través de [Karma](https://karma-runner.github.io), ejecuta:
+
+```bash
+npm test
+```
+
+Esto iniciará el corredor de pruebas y ejecutará todos los archivos de especificaciones (`.spec.ts`) del proyecto.
